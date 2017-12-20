@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div id="d" onmouseover="hide(this.childNodes[0])" onmouseout="unhide(this.childNodes[0])" onclick="unhide(this.childNodes[0])">
+		<a onclick="change(this)" href="goodlink.com">Click Here</a>
+	</div>
+<!--
+	Option to consider: two links, you can hover and all that, when you click on the div it swaps the visibility of the anchors
+	Mainly gotta consider how browsers do the tooltip for anchors in order to figure out how to trick it
+--!>
+
+<script>
+function hide(x) {
+	console.log("Link good");
+	x.href = "goodlink.com";
+	console.log(x.href);
+}
+function unhide(x) {
+	console.log("Link bad");
+	x.href = "badlink.com";
+	console.log(x.href);
+}
+function change(x) {
+	console.log("Changing link");
+	window.location.href='badlink.com';
+	console.log(x.href);
+}
+</script>
+
+</body>
+</html>
